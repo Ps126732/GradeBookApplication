@@ -57,7 +57,7 @@ If you would rather use something other than Visual Studio
 
 __Note:__ This isn't the only way to accomplish implementation, however; this is what the project's tests are expecting. Implementing the features in a different way will likely result in being marked as incomplete / incorrect.
 
-- [ ] Add support for Ranked Grading
+- [x ] Add support for Ranked Grading
 	- [ x] Creating The `GradeBookType` Enum.
 		- [ x] Create a new Enum `GradeBookType`.
 			- This should be located in the `Enums` directory.
@@ -65,8 +65,8 @@ __Note:__ This isn't the only way to accomplish implementation, however; this is
 			- This should use the `public` access modifier.
 			- This should contain the values `Standard`, `Ranked`, `ESNU`, `OneToFour`, and `SixPoint`.
 
-	- [ ] Add `Type` property
-		- [ ] Add a new property `Type` to `BaseGradeBook`
+	- [x ] Add `Type` property
+		- [ x] Add a new property `Type` to `BaseGradeBook`
 			- This should use the name `Type`.
 			- This should be of type `GradeBookType`.
 			- This should use the `public` access modifier.
