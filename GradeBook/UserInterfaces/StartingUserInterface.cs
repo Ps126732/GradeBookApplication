@@ -35,24 +35,28 @@ namespace GradeBook.UserInterfaces
         {
             var parts = command.Split(' ');
 
-            // Sprawdzamy, czy komenda ma 3 części (np. "create", "Matematyka", "standard")
-            if (parts.Length != 3)
+            // Zmiana: teraz wymagamy 4 części w komendzie, a nie 3
+            if (parts.Length != 4)
             {
-                Console.WriteLine("Command not valid, Create requires a name and type of gradebook.");
+                Console.WriteLine("Command not valid, Create requires a name, type of gradebook, if it's weighted (true / false).");
                 return;
             }
 
             var name = parts[1];
+
+            // Konwersja czwartego słowa z tekstu (string) na wartość logiczną (bool)
+            var isWeighted = bool.Parse(parts[3]);
+
             BaseGradeBook gradeBook;
 
-            // Tworzymy odpowiedni dziennik na podstawie wpisanego typu
+            // Przekazanie zmiennej 'isWeighted' do konstruktorów
             if (parts[2] == "standard")
             {
-                gradeBook = new StandardGradeBook(name);
+                gradeBook = new StandardGradeBook(name, isWeighted);
             }
             else if (parts[2] == "ranked")
             {
-                gradeBook = new RankedGradeBook(name);
+                gradeBook = new RankedGradeBook(name, isWeighted);
             }
             else
             {
